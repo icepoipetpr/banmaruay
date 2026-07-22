@@ -1,0 +1,824 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บ้านมารวย | ทางเข้าบ้านมารวยล่าสุด บน banmaruay.com</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="preload" href="hero.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="dns-prefetch" href="https://maruay.co">
+    <link rel="dns-prefetch" href="https://lin.ee">
+    
+    <meta name="description" content="บ้านมารวย ทางเข้าบ้านมารวยล่าสุดบน banmaruay.com คู่มือสมัครบ้านมารวย อ่านรายการ และช่องทางติดต่ออย่างปลอดภัย">
+    <meta name="keywords" content="บ้านมารวย, ทางเข้าบ้านมารวย, ทางเข้าบ้านมารวยล่าสุด, สมัครบ้านมารวย, มารวย, banmaruay, banmaruay.com, เว็บบ้านมารวย">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="บ้านมารวย">
+    <meta name="theme-color" content="#11141a">
+    <link rel="canonical" href="https://banmaruay.com/">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="บ้านมารวย">
+    <meta property="og:title" content="บ้านมารวย | ทางเข้าบ้านมารวยล่าสุด บน banmaruay.com">
+    <meta property="og:description" content="ทางเข้าบ้านมารวยล่าสุด พร้อมคู่มือสมัครและช่องทาง LINE บน banmaruay.com">
+    <meta property="og:url" content="https://banmaruay.com/">
+    <meta property="og:image" content="https://banmaruay.com/hero.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="บ้านมารวย | ทางเข้าบ้านมารวยล่าสุด บน banmaruay.com">
+    <meta name="twitter:description" content="ทางเข้าบ้านมารวยล่าสุด คู่มือสมัครบ้านมารวย บน banmaruay.com">
+    <meta name="twitter:image" content="https://banmaruay.com/hero.webp">
+    <style>
+        /* =======================================================
+            RESET & CORE LAYOUT (ธีมดาร์กโหมดหรูหราแบบมารวยดิจิทัล)
+            ======================================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #090b0e;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #11141a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .web-image-section img {
+            width: 100%;
+            display: block;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        /* แถบสถานะออนไลน์มารวย */
+        .live-status-bar {
+            background-color: #171c24;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00e676;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00e676;
+        }
+
+        /* =======================================================
+            โซนปุ่มคู่ (ทางเข้าบ้านมารวย / ติดต่อเจ้าหน้าที่)
+            ======================================================= */
+        .button-group-container {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: #11141a;
+        }
+
+        .money-gold-strip {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            padding: 4px 15px 0;
+            background: #11141a;
+        }
+
+        .money-gold-strip svg {
+            width: 34px;
+            height: 34px;
+            filter: drop-shadow(0 2px 6px rgba(240, 215, 140, 0.35));
+        }
+
+        .btn-action-style {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            min-height: 64px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.08s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            will-change: transform;
+        }
+
+        .btn-action-style:active {
+            transform: scale(0.97);
+            animation: none;
+        }
+
+        .btn-login-red {
+            background:
+                linear-gradient(180deg, rgba(255, 236, 179, 0.22) 0%, transparent 42%),
+                linear-gradient(135deg, #c9a227 0%, #8b1a1a 18%, #e53935 48%, #7a0c0c 100%);
+            border: 1.5px solid #f0d78c;
+            box-shadow:
+                0 8px 22px rgba(139, 26, 26, 0.5),
+                inset 0 1px 0 rgba(255, 248, 220, 0.35),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.28);
+            animation: blink-login 1.25s ease-in-out infinite;
+        }
+
+        .btn-line-green {
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 40%),
+                linear-gradient(135deg, #b8f5c8 0%, #1db954 18%, #06C755 52%, #046b32 100%);
+            border: 1.5px solid #a8f5c0;
+            box-shadow:
+                0 8px 22px rgba(4, 107, 50, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.32),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.22);
+            animation: blink-line 1.4s ease-in-out infinite;
+        }
+
+        .btn-login-red:hover,
+        .btn-line-green:hover {
+            filter: brightness(1.06);
+        }
+
+        .btn-emoji {
+            flex: 0 0 auto;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.28);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+                0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-emoji img,
+        .btn-emoji svg {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .btn-copy {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-width: 0;
+        }
+
+        .btn-title {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+        }
+
+        .btn-sub {
+            margin-top: 2px;
+            font-size: 11px;
+            font-weight: 600;
+            opacity: 0.95;
+            color: #ffe9a8;
+        }
+
+        .btn-line-green .btn-sub {
+            color: #e8fff0;
+        }
+
+        @keyframes blink-login {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow:
+                    0 8px 22px rgba(139, 26, 26, 0.45),
+                    inset 0 1px 0 rgba(255, 248, 220, 0.3),
+                    inset 0 -2px 6px rgba(0, 0, 0, 0.25);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow:
+                    0 0 0 3px rgba(240, 215, 140, 0.35),
+                    0 12px 28px rgba(229, 57, 53, 0.55),
+                    inset 0 1px 0 rgba(255, 248, 220, 0.4),
+                    inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes blink-line {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow:
+                    0 8px 22px rgba(4, 107, 50, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+                    inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow:
+                    0 0 0 3px rgba(168, 245, 192, 0.32),
+                    0 12px 28px rgba(6, 199, 85, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+                    inset 0 -2px 6px rgba(0, 0, 0, 0.18);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn-login-red,
+            .btn-line-green {
+                animation: none;
+            }
+        }
+
+        .icon-left {
+            position: absolute;
+            left: 15px;
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        /* =======================================================
+            กล่องประมวลผลจำลองตัวเลข (Live Simulation Feed) 
+            ======================================================= */
+        .gold-feed-container {
+            background: linear-gradient(180deg, #171c24 0%, #11141a 100%);
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            border-radius: 16px;
+            padding: 16px;
+            margin: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .gold-feed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .gold-feed-header h3 {
+            color: #66b2ff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .gold-live-tag {
+            background: linear-gradient(90deg, #ff1744, #d500f9);
+            color: #ffffff;
+            font-size: 9px;
+            font-weight: 900;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .gold-feed-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 520px; 
+            overflow: hidden;
+        }
+
+        .gold-feed-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(23, 28, 36, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 10px 12px;
+            animation: goldSlideIn 0.4s ease-out forwards;
+        }
+
+        .gold-username {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .gold-time {
+            color: #94a3b8;
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        .gold-item-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+        }
+
+        .gold-amount {
+            font-size: 13.5px;
+            font-weight: bold;
+        }
+
+        .gold-amount.text-withdraw { color: #ff5252; }
+        .gold-amount.text-deposit { color: #69f0ae; }
+
+        /* =======================================================
+            กล่องรีวิวห้องสนทนากระดานข้อมูล (User Reviews) 
+            ======================================================= */
+        .review-section-container {
+            padding: 5px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .review-card {
+            background: rgba(23, 28, 36, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            animation: fadeInReview 0.5s ease-in-out;
+        }
+
+        .review-user-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .review-user-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .review-time {
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        .review-body {
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        .review-role {
+            font-size: 11px;
+            color: #40a9ff;
+            margin-bottom: 2px;
+        }
+
+        .review-stars {
+            color: #ffca28;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .review-comment {
+            font-size: 13.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        @keyframes goldSlideIn {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInReview {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .footer-space {
+            margin-bottom: 25px;
+        }
+
+        /* =======================================================
+            กล่องบทความ SEO ปรับผังคีย์เวิร์ดเว็บหวยออนไลน์
+            ======================================================= */
+        .seo-article-container {
+            background: rgba(17, 20, 26, 0.95);
+            border: 1px solid rgba(0, 123, 255, 0.15);
+            padding: 16px;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .seo-article-title {
+            color: #f3e5ab;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            line-height: 1.45;
+            border-left: 3px solid #d4af37;
+            padding-left: 10px;
+        }
+
+        .seo-article-content {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.75;
+            text-align: left;
+        }
+
+        .seo-article-content p {
+            margin-bottom: 12px;
+        }
+
+        .seo-article-content h2, .seo-article-content h3 {
+            color: #f1f5f9;
+            margin: 15px 0 8px 0;
+            font-weight: bold;
+        }
+
+        .seo-article-content h2 { font-size: 15px; color: #f3e5ab; }
+        .seo-article-content h3 { font-size: 14px; color: #e5c158; }
+
+        .seo-article-content strong {
+            color: #ffd978;
+            font-weight: 600;
+        }
+
+        .seo-article-content a {
+            color: #ffd978;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .seo-guide-nav {
+            margin: 0 15px 18px;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.28);
+            background: rgba(255, 215, 120, 0.06);
+        }
+
+        .seo-guide-nav h2 {
+            color: #f3e5ab;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .seo-guide-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .seo-guide-nav a {
+            display: block;
+            color: #ffd978;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 13.5px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.25);
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://banmaruay.com/#organization",
+          "name": "บ้านมารวย",
+          "url": "https://banmaruay.com/",
+          "logo": { "@type": "ImageObject", "url": "https://banmaruay.com/logo.png" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://banmaruay.com/#website",
+          "name": "บ้านมารวย",
+          "alternateName": ["มารวย", "Banmaruay"],
+          "url": "https://banmaruay.com/",
+          "inLanguage": "th-TH",
+          "publisher": { "@id": "https://banmaruay.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://banmaruay.com/#webpage",
+          "url": "https://banmaruay.com/",
+          "name": "บ้านมารวย | ทางเข้าบ้านมารวยล่าสุด บน banmaruay.com",
+          "description": "บ้านมารวย ทางเข้าบ้านมารวยล่าสุดบน banmaruay.com คู่มือสมัครบ้านมารวย และช่องทางติดต่ออย่างปลอดภัย",
+          "isPartOf": { "@id": "https://banmaruay.com/#website" },
+          "inLanguage": "th-TH",
+          "dateModified": "2026-07-22"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "ทางเข้าบ้านมารวยล่าสุดอยู่ที่ไหน?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ใช้โดเมน banmaruay.com เป็นทางเข้าบ้านมารวยหลัก แล้วกดปุ่มเข้าสู่ระบบจากในเว็บ และตรวจว่ามีการเชื่อมต่อ HTTPS"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "ควรค้นหาคำว่าอะไรเพื่อเจอบ้านมารวย?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "คำค้นที่เกี่ยวข้องได้แก่ บ้านมารวย, ทางเข้าบ้านมารวย, ทางเข้าบ้านมารวยล่าสุด, สมัครบ้านมารวย และ banmaruay.com"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <div class="web-image-section">
+            <img src="hero.webp" alt="บ้านมารวย ทางเข้าบ้านมารวยล่าสุดบน banmaruay.com" width="860" height="860" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="live-status-bar">
+            <div class="status-dot"></div>
+            <p style="color: #fff;">ขณะนี้มีผู้เข้าชมข้อมูลบ้านมารวยอยู่ <span id="online-counter" style="color: #ffd978; font-weight: bold;">1,248</span> คน</p>
+        </div>
+
+        <div class="money-gold-strip" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#111"/><path fill="#FFD54F" d="M18 28c0-8 6-14 14-14s14 6 14 14v4H18v-4z"/><path fill="#FFC107" d="M16 32h32v18c0 2-2 4-4 4H20c-2 0-4-2-4-4V32z"/><rect x="28" y="18" width="8" height="6" rx="2" fill="#FFECB3"/><text x="32" y="46" text-anchor="middle" font-size="16" font-weight="700" fill="#2E7D32">$</text></svg>
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF3C4"/><stop offset="50%" stop-color="#FFD54F"/><stop offset="100%" stop-color="#F9A825"/></linearGradient></defs><circle cx="32" cy="32" r="28" fill="url(#mg1)" stroke="#B8860B" stroke-width="4"/><text x="32" y="39" text-anchor="middle" font-size="18" font-weight="800" fill="#8B5A00">฿</text></svg>
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFE082"/><stop offset="100%" stop-color="#FFC107"/></linearGradient></defs><circle cx="32" cy="32" r="28" fill="url(#mg2)" stroke="#FF8F00" stroke-width="3"/><path fill="#FFFDE7" d="M32 14l4.2 8.6 9.5 1.4-6.9 6.7 1.6 9.4L32 35.8 23.6 40l1.6-9.4-6.9-6.7 9.5-1.4z"/></svg>
+        </div>
+
+        <div class="button-group-container">
+            <a href="https://maruay.co/register?af=user-11327&ag=mabaa" target="_blank" rel="noopener noreferrer" class="btn-action-style btn-login-red">
+                <span class="btn-emoji" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#111"/><path fill="#FFD54F" d="M18 28c0-8 6-14 14-14s14 6 14 14v4H18v-4z"/><path fill="#FFC107" d="M16 32h32v18c0 2-2 4-4 4H20c-2 0-4-2-4-4V32z"/><rect x="28" y="18" width="8" height="6" rx="2" fill="#FFECB3"/><text x="32" y="46" text-anchor="middle" font-size="16" font-weight="700" fill="#2E7D32">$</text></svg>
+                </span>
+                <span class="btn-copy">
+                    <span class="btn-title">เข้าสู่ระบบรับทรัพย์</span>
+                    <span class="btn-sub">สมัครง่าย · ได้โบนัสทันที</span>
+                </span>
+                <span class="btn-emoji" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF3C4"/><stop offset="50%" stop-color="#FFD54F"/><stop offset="100%" stop-color="#F9A825"/></linearGradient></defs><circle cx="32" cy="32" r="28" fill="url(#g1)" stroke="#B8860B" stroke-width="4"/><circle cx="32" cy="32" r="18" fill="none" stroke="#FFF8E1" stroke-width="2" opacity=".7"/><text x="32" y="39" text-anchor="middle" font-size="18" font-weight="800" fill="#8B5A00">฿</text></svg>
+                </span>
+            </a>
+            <a href="https://lin.ee/xHcjiRK" target="_blank" rel="noopener noreferrer" class="btn-action-style btn-line-green">
+                <span class="btn-emoji" aria-hidden="true"><img src="line.webp" alt="" width="22" height="22" decoding="async"></span>
+                <span class="btn-copy">
+                    <span class="btn-title">แอดไลน์รับโปรเด็ด</span>
+                    <span class="btn-sub">ตอบไว · ดูแลตลอด 24 ชม.</span>
+                </span>
+                <span class="btn-emoji" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFE082"/><stop offset="100%" stop-color="#FFC107"/></linearGradient></defs><circle cx="32" cy="32" r="28" fill="url(#g2)" stroke="#FF8F00" stroke-width="3"/><path fill="#FFFDE7" d="M32 14l4.2 8.6 9.5 1.4-6.9 6.7 1.6 9.4L32 35.8 23.6 40l1.6-9.4-6.9-6.7 9.5-1.4z"/></svg>
+                </span>
+            </a>
+        </div>
+        
+        <div class="web-image-section">
+            <img src="banner.webp" alt="มารวย วิเคราะห์สถิติตัวเลขและข้อมูลหวยออนไลน์" loading="lazy" decoding="async">
+        </div>
+
+        <div class="gold-feed-container">
+            <div class="gold-feed-header">
+                <h3>รายการถูกหวยและถอนเงินล่าสุด</h3>
+                <span class="gold-live-tag">LIVE</span>
+            </div>
+            <div class="gold-feed-list" id="gold-feed-list"></div>
+        </div>
+
+        <div class="web-image-section">
+            <img src="content-detail.webp" alt="บ้านมารวย ข้อมูลสถิติหวยออนไลน์และรายละเอียดเว็บมารวย" loading="lazy" decoding="async">
+        </div>
+
+        <div class="review-section-container" id="review-section-container"></div>
+
+        <div class="web-image-section" style="margin-top: 15px;">
+            <img src="review-zone.webp" alt="รีวิวบ้านมารวยและข้อมูลมารวยจากผู้ใช้งาน" loading="lazy" decoding="async">
+        </div>
+
+        <div class="button-group-container footer-space">
+            <a href="https://maruay.co/register?af=user-11327&ag=mabaa" target="_blank" rel="noopener noreferrer" class="btn-action-style btn-login-red">
+                <span class="btn-emoji" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#111"/><path fill="#FFD54F" d="M18 28c0-8 6-14 14-14s14 6 14 14v4H18v-4z"/><path fill="#FFC107" d="M16 32h32v18c0 2-2 4-4 4H20c-2 0-4-2-4-4V32z"/><rect x="28" y="18" width="8" height="6" rx="2" fill="#FFECB3"/><text x="32" y="46" text-anchor="middle" font-size="16" font-weight="700" fill="#2E7D32">$</text></svg>
+                </span>
+                <span class="btn-copy">
+                    <span class="btn-title">เข้าสู่ระบบรับทรัพย์</span>
+                    <span class="btn-sub">สมัครง่าย · ได้โบนัสทันที</span>
+                </span>
+                <span class="btn-emoji" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g1b" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF3C4"/><stop offset="50%" stop-color="#FFD54F"/><stop offset="100%" stop-color="#F9A825"/></linearGradient></defs><circle cx="32" cy="32" r="28" fill="url(#g1b)" stroke="#B8860B" stroke-width="4"/><circle cx="32" cy="32" r="18" fill="none" stroke="#FFF8E1" stroke-width="2" opacity=".7"/><text x="32" y="39" text-anchor="middle" font-size="18" font-weight="800" fill="#8B5A00">฿</text></svg>
+                </span>
+            </a>
+            <a href="https://lin.ee/xHcjiRK" target="_blank" rel="noopener noreferrer" class="btn-action-style btn-line-green">
+                <span class="btn-emoji" aria-hidden="true"><img src="line.webp" alt="" width="22" height="22" loading="lazy" decoding="async"></span>
+                <span class="btn-copy">
+                    <span class="btn-title">แอดไลน์รับโปรเด็ด</span>
+                    <span class="btn-sub">ตอบไว · ดูแลตลอด 24 ชม.</span>
+                </span>
+                <span class="btn-emoji" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g2b" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFE082"/><stop offset="100%" stop-color="#FFC107"/></linearGradient></defs><circle cx="32" cy="32" r="28" fill="url(#g2b)" stroke="#FF8F00" stroke-width="3"/><path fill="#FFFDE7" d="M32 14l4.2 8.6 9.5 1.4-6.9 6.7 1.6 9.4L32 35.8 23.6 40l1.6-9.4-6.9-6.7 9.5-1.4z"/></svg>
+                </span>
+            </a>
+        </div>
+
+        <div class="seo-article-container">
+            <h1 class="seo-article-title"><a href="/">บ้านมารวย</a> | <a href="tang-khao-banmaruay.html">ทางเข้าบ้านมารวยล่าสุด</a> บน banmaruay.com</h1>
+
+            <div class="seo-article-content">
+                <p><strong>บ้านมารวย</strong> บนโดเมน <a href="/">banmaruay.com</a> คือจุดเริ่มต้นสำหรับผู้ที่ค้นหา <a href="tang-khao-banmaruay.html">ทางเข้าบ้านมารวย</a> หรือเตรียม <strong>สมัครบ้านมารวย</strong> หน้านี้สรุปวิธีเข้าใช้งานอย่างปลอดภัย และช่องทางติดต่อทีมงาน โดยไม่รับประกันผลรางวัล</p>
+
+                <h2>ทางเข้าบ้านมารวยเริ่มจากไหน</h2>
+                <p>ควรเริ่มที่หน้าแรกของเว็บนี้ ตรวจว่าโดเมนเป็น <strong>banmaruay.com</strong> และมี HTTPS จากนั้นกดปุ่มเข้าสู่ระบบหรือแอดไลน์จากในเว็บเท่านั้น อ่านรายละเอียดเพิ่มที่หน้า <a href="tang-khao-banmaruay.html">ทางเข้าบ้านมารวยล่าสุด</a></p>
+
+                <h2>คู่มือบ้านมารวย อ่านยังไงก่อนใช้งาน</h2>
+                <p>ก่อนยืนยันรายการ ควรอ่านชื่อรายการ รอบเวลา เวลาปิดรับ และอัตราที่แสดงในหน้าสรุปล่าสุด อ่านเพิ่มในหน้า <a href="khu-mue-banmaruay.html">คู่มือบ้านมารวย</a></p>
+
+                <h2>สมัครบ้านมารวยและดูแลบัญชี</h2>
+                <p>กดสมัครจากปุ่มในเว็บ ตั้งรหัสผ่านเฉพาะ และไม่ส่งรหัสผ่านให้ผู้อื่น หากมีปัญหาให้ใช้ปุ่มไลน์จากหน้าเว็บนี้เท่านั้น</p>
+
+                <h2>คำถามที่พบบ่อย</h2>
+                <h3>ทางเข้าบ้านมารวยล่าสุดอยู่ที่ไหน?</h3>
+                <p>ใช้ <a href="/">banmaruay.com</a> เป็นทางเข้าหลัก แล้วกดปุ่มจากในเว็บ</p>
+                <h3>ควรค้นหาคำว่าอะไร?</h3>
+                <p>บ้านมารวย, ทางเข้าบ้านมารวย, ทางเข้าบ้านมารวยล่าสุด, สมัครบ้านมารวย และ banmaruay.com</p>
+            </div>
+        </div>
+
+        <nav class="seo-guide-nav" aria-label="คู่มือบ้านมารวย">
+            <h2>คู่มือบ้านมารวย อ่านต่อ</h2>
+            <ul>
+                <li><a href="tang-khao-banmaruay.html">ทางเข้าบ้านมารวยล่าสุด — เช็กโดเมนให้ปลอดภัย</a></li>
+                <li><a href="khu-mue-banmaruay.html">คู่มือบ้านมารวย — อ่านหน้ารายการก่อนใช้งาน</a></li>
+                <li><a href="samak-banmaruay.html">สมัครบ้านมารวย — ขั้นตอนสั้นๆ</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <script>
+        // =======================================================
+        // 1. ระบบนับจำนวนผู้ใช้งานออนไลน์ (Real-time Counter)
+        // =======================================================
+        function updateCounter() {
+            const counterElement = document.getElementById('online-counter');
+            if(!counterElement) return;
+            let currentCount = parseInt(counterElement.innerText.replace(/,/g, ''));
+            let change = Math.floor(Math.random() * 31) - 15; 
+            currentCount += change;
+            counterElement.innerText = currentCount.toLocaleString();
+        }
+        setInterval(updateCounter, 8000);
+
+        // =======================================================
+        // 2. ระบบจำลองผลลัพธ์ดัชนีตัวเลข (20 ชุดข้อมูลสุ่มความน่าจะเป็น)
+        // =======================================================
+        const simulationDatabase = [
+            { id: "คุณภัทร", desc: "ถูกหวยลาว VIP", target: "ถอนเงิน 18,450 บาท", type: "withdraw" },
+            { id: "คุณนุ่น", desc: "ถูกรางวัลหวยฮานอย", target: "ถอนเงิน 32,800 บาท", type: "withdraw" },
+            { id: "คุณเอก", desc: "ถูกหวยรัฐบาลชุด 3 ตัว", target: "ถอนเงิน 76,200 บาท", type: "withdraw" },
+            { id: "คุณมายด์", desc: "ถูกหวยมาเลย์", target: "ถอนเงิน 24,600 บาท", type: "withdraw" },
+            { id: "คุณบอล", desc: "ถูกรางวัลหวยหุ้นไทย", target: "ถอนเงิน 11,950 บาท", type: "withdraw" },
+            { id: "คุณแพรว", desc: "ถูกหวยฮานอยพิเศษ", target: "ถอนเงิน 45,300 บาท", type: "withdraw" },
+            { id: "คุณต้น", desc: "ถูกหวยลาวสามัคคี", target: "ถอนเงิน 9,840 บาท", type: "withdraw" },
+            { id: "คุณฟ้า", desc: "ถูกรางวัลเลข 2 ตัว", target: "ถอนเงิน 15,700 บาท", type: "withdraw" },
+            { id: "คุณเจมส์", desc: "ถูกหวยหุ้นต่างประเทศ", target: "ถอนเงิน 28,100 บาท", type: "withdraw" },
+            { id: "คุณแอน", desc: "ถูกหวยฮานอยปกติ", target: "ถอนเงิน 19,260 บาท", type: "withdraw" },
+            { id: "คุณวิน", desc: "ถูกรางวัลชุดเลขเด่น", target: "ถอนเงิน 54,900 บาท", type: "withdraw" },
+            { id: "คุณบี", desc: "ถูกหวยลาวพัฒนา", target: "ถอนเงิน 21,400 บาท", type: "withdraw" },
+            { id: "คุณกอล์ฟ", desc: "ถูกหวยรัฐบาลเลขท้าย", target: "ถอนเงิน 37,500 บาท", type: "withdraw" },
+            { id: "คุณมิ้นท์", desc: "ถูกหวยฮานอย VIP", target: "ถอนเงิน 63,250 บาท", type: "withdraw" },
+            { id: "คุณโอ๊ต", desc: "ถูกรางวัลหวยหุ้นจีน", target: "ถอนเงิน 12,300 บาท", type: "withdraw" },
+            { id: "คุณพลอย", desc: "ถูกหวยลาวสตาร์", target: "ถอนเงิน 26,780 บาท", type: "withdraw" },
+            { id: "คุณแมน", desc: "ถูกหวยฮานอยเฉพาะกิจ", target: "ถอนเงิน 41,600 บาท", type: "withdraw" },
+            { id: "คุณจอย", desc: "ถูกรางวัลเลขวิ่ง", target: "ถอนเงิน 8,920 บาท", type: "withdraw" },
+            { id: "คุณนนท์", desc: "ถูกหวยหุ้นนิเคอิ", target: "ถอนเงิน 17,850 บาท", type: "withdraw" },
+            { id: "คุณแป้ง", desc: "ถูกหวยลาวย้อนหลัง", target: "ถอนเงิน 22,950 บาท", type: "withdraw" }
+        ];
+
+        function generateSimulationRow() {
+            const feedList = document.getElementById('gold-feed-list');
+            if(!feedList) return;
+            const randomSim = simulationDatabase[Math.floor(Math.random() * simulationDatabase.length)];
+            let statusClass = randomSim.type === "deposit" ? "text-deposit" : "text-withdraw";
+
+            const newItem = document.createElement('div');
+            newItem.className = 'gold-feed-item';
+            newItem.innerHTML = `
+                <div class="gold-item-left">
+                    <div>
+                        <p class="gold-username">${randomSim.id}</p>
+                        <p class="gold-time">${randomSim.desc}</p>
+                    </div>
+                </div>
+                <div class="gold-item-right">
+                    <span class="gold-amount ${statusClass}" style="font-size: 11px;">${randomSim.target}</span>
+                </div>
+            `;
+            feedList.insertBefore(newItem, feedList.firstChild);
+            if (feedList.children.length > 6) {
+                feedList.removeChild(feedList.lastChild);
+            }
+        }
+
+        for(let i=0; i<3; i++) { generateSimulationRow(); }
+        setInterval(generateSimulationRow, 9000);
+
+        // =======================================================
+        // 3. ฐานข้อมูลรีวิวกระดานสนทนาสถิติ (20 คน สุ่มสลับสไตล์วิเคราะห์)
+        // =======================================================
+        const reviewDatabase = [
+            { name: "พงศธร ศรีสมบูรณ์", role: "นักวิเคราะห์สถิติ", comment: "ฐานข้อมูลสถิติของบ้านมารวยละเอียดและลึกมากครับ เอามาทำแบบจำลองความน่าจะเป็นได้ดีมาก" },
+            { name: "นลินทิพย์ พรหมดี", role: "ผู้ใช้งานระบบข้อมูล", comment: "ชอบหน้ารายงานดัชนีตัวเลขของเว็บหวยมารวยมากค่ะ แยกประเภทข้อมูลชัดเจนสืบค้นง่าย" },
+            { name: "เจษฎา อัครกุล", role: "สมาชิก VIP", comment: "ลองนำสูตรทางคณิตศาสตร์จากที่นี่ไปวิเคราะห์คู่กับเว็บหวยออนไลน์ ได้ทิศทางที่แม่นยำขึ้นชัดเจน" },
+            { name: "กนกวรรณ แสงทอง", role: "ผู้ศึกษาแนวทาง", comment: "ระบบสารสนเทศมีความเป็นปัจจุบันสูงมาก ข้อมูลซื้อหวยออนไลน์อัปเดตไวไม่ล่าช้าเลยค่ะ" },
+            { name: "เมธาสิทธิ์ โชควัฒนา", role: "นักวิเคราะห์สถิติ", comment: "ประทับใจความเสถียรของทางเข้ามารวยครับ ลิงก์ตรงโหลดเร็ว ค้นหาดาต้าเบสย้อนหลังไม่มีสะดุด" },
+            { name: "ศิรินภา เงินทอง", role: "ผู้ใช้งานระบบข้อมูล", comment: "เข้ามาร่วมแลกเปลี่ยนมุมมองสถิติหลังจากสมัครมารวย ได้เทคนิคการคัดชุดตัวเลขเด่นเพียบเลย" },
+            { name: "ธีรเดช เจริญสุข", role: "สมาชิก VIP", comment: "โครงสร้างความปลอดภัยของเว็บบ้านมารวยหนาแน่น มั่นใจในการสืบค้นข้อมูลหวยออนไลน์จ่ายจริง" },
+            { name: "ชลดา พรหมรักษา", role: "ผู้ศึกษาแนวทาง", comment: "ชอบข้อมูลสถิติตัวเลขล็อตเตอรี่ออนไลน์ที่นี่ค่ะ สรุปผลได้สมบูรณ์แบบ เข้าใจง่ายไม่ซับซ้อน" },
+            { name: "เกียรติศักดิ์ ศรีสุข", role: "นักวิเคราะห์สถิติ", comment: "แนะนำแพลตฟอร์มนี้สำหรับคนที่ชอบการคำนวณเชิงคุณภาพ ข้อมูลเครือข่ายมารวยนิ่งและตรงเป๊ะมาก" },
+            { name: "วิภาวรรณ แสงประทีป", role: "ผู้ใช้งานระบบข้อมูล", comment: "เป็นเว็บหวยออนไลน์ที่ดีที่สุดในแง่การแชร์องค์ความรู้ทางสถิติค่ะ ได้ประโยชน์เต็มเม็ดเต็มหน่วย" },
+            { name: "ธนภูมิ พารวย", role: "สมาชิก VIP", comment: "อัลกอริทึมจำลองผลลัพธ์คัดแยกเลขเด่นเลขดับทำได้รวดเร็วทันใจ ตอบโจทย์ยุคดิจิทัลมากครับ" },
+            { name: "ยุพารัตน์ สินเจริญ", role: "ผู้ศึกษาแนวทาง", comment: "เช็กข้อมูลแทงหวยออนไลน์ผ่านระบบออโต้หน้าเว็บสะดวกรวดเร็ว ปลอดภัย มั่นใจได้ร้อยเปอร์เซ็นต์" },
+            { name: "วรเมธ โชคอนันต์", role: "นักวิเคราะห์สถิติ", comment: "ตารางเปรียบเทียบค่าความแปรปรวนดัชนีหุ้นเดินดีมาก นำไปปรับใช้กับการศึกษาแนวทางได้เยี่ยม" },
+            { name: "พิมพ์มาดา ร่ำรวย", role: "ผู้ใช้งานระบบข้อมูล", comment: "หน้าเว็บออกแบบดีไซน์สวยสะอาดตา ข้อมูลแน่น ลิงก์ระบบใช้งานได้จริงและเสถียรสุดๆ ค่ะ" },
+            { name: "สุรศักดิ์ มั่งคั่ง", role: "สมาชิก VIP", comment: "ระบบหลังบ้านส่งตรงข้อมูลสถิติแม่นยำทันใจ คอคิดคำนวณตัวเลขห้ามพลาดบ้านหลังนี้เด็ดขาด" },
+            { name: "ปรียานุช สินทรัพย์", role: "ผู้ศึกษาแนวทาง", comment: "การบริการข้อมูลข่าวสารของทีมงานรวดเร็วทันใจ แนะนำการอ่านกระดานสถิติได้ละเอียดมากค่ะ" },
+            { name: "อภิวัฒน์ สมบูรณ์", role: "นักวิเคราะห์สถิติ", comment: "ยืนหนึ่งเรื่องความเสถียรของฐานข้อมูลเชิงตัวเลข คนเข้าใช้งานพร้อมกันหลักหมื่นระบบยังนิ่ง" },
+            { name: "จิรัญญา ใจกว้าง", role: "ผู้ใช้งานระบบข้อมูล", comment: "ติดตามสรุปผลกระแสดัชนีตัวเลขเด่นที่นี่มาตลอด ข้อมูลมารวยล่าสุดตรงเวลาและเชื่อถือได้ชัวร์" },
+            { name: "เกรียงศักดิ์ เมืองงาม", role: "สมาชิก VIP", comment: "ชุมชนแบ่งปันแนวทางหวยมารวยที่นี่คุยกันสร้างสรรค์ ได้แลกเปลี่ยนเทคนิคดีๆ เพียบเลยครับ" },
+            { name: "พรปวีณ์ สินประเสริฐ", role: "ผู้ศึกษาแนวทาง", comment: "เช็กผลดัชนีต่างประเทศและตัวเลขสัญชาติอาเซียนได้ครบวงจร มิติใหม่ของเว็บสถิติจริงๆ" }
+        ];
+
+        function updateReviews() {
+            const reviewContainer = document.getElementById('review-section-container');
+            if (!reviewContainer) return;
+            let shuffled = [...reviewDatabase].sort(() => 0.5 - Math.random());
+            let selectedReviews = shuffled.slice(0, 3);
+            reviewContainer.innerHTML = '';
+            
+            selectedReviews.forEach(review => {
+                const timeAgo = Math.floor(Math.random() * 45) + 5;
+                const reviewEl = document.createElement('div');
+                reviewEl.className = 'review-card';
+                reviewEl.innerHTML = `
+                    <div class="review-user-info">
+                        <span class="review-user-name">👤 ${review.name}</span>
+                        <span class="review-time">${timeAgo} นาทีที่แล้ว</span>
+                    </div>
+                    <div class="review-body">
+                        <div class="review-role">${review.role}</div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-comment">${review.comment}</div>
+                    </div>
+                `;
+                reviewContainer.appendChild(reviewEl);
+            });
+        }
+        
+        updateReviews();
+        setInterval(updateReviews, 12000); 
+    </script>
+</body>
+</html>
+
+
+
+
+

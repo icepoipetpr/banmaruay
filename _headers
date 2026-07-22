@@ -1,0 +1,23 @@
+/*
+  Cache static assets on Netlify. HTML stays fresh so SEO/meta updates appear quickly.
+*/
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sitemap.xml
+  Content-Type: text/xml; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sitemap.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
