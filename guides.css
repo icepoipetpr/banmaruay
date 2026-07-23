@@ -1,140 +1,87 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
-
+img, svg { max-width: 100%; height: auto; }
 body {
-    background: #090b0e;
-    color: #e2e8f0;
-    font-family: "Sarabun", "Segoe UI", Tahoma, sans-serif;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(224,168,0,.18), transparent 28%),
+        linear-gradient(165deg, #071828 0%, #0f2a44 48%, #12324f 100%);
+    color: #0f2a44;
+    font-family: "Kanit", "Segoe UI", Tahoma, sans-serif;
     line-height: 1.7;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
 }
-
 .site-shell {
-    width: 100%;
-    max-width: 720px;
-    margin: 0 auto;
-    min-height: 100vh;
-    background: #11141a;
-    border-left: 1px solid rgba(212, 175, 55, 0.18);
-    border-right: 1px solid rgba(212, 175, 55, 0.18);
+    width: 100%; max-width: 720px; margin: 0 auto;
+    min-height: 100vh; min-height: 100dvh;
+    background: #f4efe4;
+    border-left: 1px solid rgba(198,40,40,.25);
+    border-right: 1px solid rgba(198,40,40,.25);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    overflow-x: hidden;
 }
-
 .page-header {
-    padding: 20px 18px 12px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
-    background: linear-gradient(180deg, #171c24 0%, #11141a 100%);
+    padding: calc(16px + env(safe-area-inset-top, 0px)) 16px 12px;
+    border-bottom: 2px dashed rgba(198,40,40,.35);
+    background: linear-gradient(135deg, #0f2a44, #1a3d5c);
+    color: #fff;
 }
-
 .back-link {
-    display: inline-block;
-    color: #f0d78c;
-    text-decoration: none;
-    font-size: 14px;
-    margin-bottom: 12px;
+    display: inline-block; color: #ffe082; text-decoration: none;
+    font-size: 14px; margin-bottom: 12px; min-height: 44px; line-height: 44px;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
 }
-
-.page-header h1 {
-    color: #f3e5ab;
-    font-size: 1.55rem;
-    line-height: 1.35;
-    margin-bottom: 8px;
-}
-
-.hero-lead {
-    color: #94a3b8;
-    font-size: 0.98rem;
-}
-
+.page-header h1 { color: #ffe082; font-size: clamp(1.25rem, 5vw, 1.55rem); line-height: 1.35; margin-bottom: 8px; }
+.hero-lead { color: #cfd8dc; font-size: 0.98rem; }
+.hero-lead a { color: #ffe082; font-weight: 700; text-decoration: none; }
 main { padding: 8px 0 28px; }
-.section { padding: 16px 18px; }
-
+.section { padding: 16px; }
 .section h2 {
-    color: #f3e5ab;
-    font-size: 1.15rem;
-    margin: 18px 0 8px;
-    border-left: 3px solid #d4af37;
-    padding-left: 10px;
+    color: #0f2a44; font-size: clamp(1.05rem, 4.2vw, 1.15rem); margin: 18px 0 8px;
+    border-left: 4px solid #c62828; padding-left: 10px;
 }
-
-.section h3 {
-    color: #e5c158;
-    font-size: 1.02rem;
-    margin: 14px 0 6px;
-}
-
-.section p, .section li {
-    color: #cbd5e1;
-    font-size: 0.98rem;
-    margin-bottom: 10px;
-}
-
-.section ul, .section ol {
-    padding-left: 1.2rem;
-    margin-bottom: 12px;
-}
-
-.section a {
-    color: #ffd978;
-    font-weight: 700;
-    text-decoration: none;
-}
-
+.section h3 { color: #c62828; font-size: 1.02rem; margin: 14px 0 6px; }
+.section p, .section li { color: #455a64; font-size: 0.98rem; margin-bottom: 10px; overflow-wrap: anywhere; }
+.section ul, .section ol { padding-left: 1.2rem; margin-bottom: 12px; }
+.section a { color: #c62828; font-weight: 700; text-decoration: none; }
 .related-links { list-style: none; padding-left: 0; }
 .related-links li { margin-bottom: 8px; }
 .related-links a {
-    display: block;
-    padding: 10px 12px;
-    border: 1px solid rgba(212, 175, 55, 0.28);
-    border-radius: 10px;
-    background: rgba(255, 215, 120, 0.06);
+    display: block; padding: 12px; border-radius: 10px; min-height: 44px;
+    border: 1.5px solid rgba(15,42,68,.12); background: #fff; border-left: 3px solid #e0a800;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
 }
-
-.cta-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 16px;
-}
-
+.cta-row { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
 .btn {
-    display: block;
-    text-align: center;
-    text-decoration: none !important;
-    font-weight: 800;
-    border-radius: 12px;
-    padding: 14px 16px;
-    color: #fff !important;
+    display: block; text-align: center; text-decoration: none !important; font-weight: 800;
+    border-radius: 16px 6px 16px 6px; padding: 14px 16px; color: #fff !important;
+    min-height: 48px; -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    user-select: none; -webkit-user-select: none;
 }
-
+.btn:active { transform: scale(.98); }
 .btn-primary {
-    background: linear-gradient(135deg, #c9a227 0%, #8b1a1a 18%, #e53935 48%, #7a0c0c 100%);
-    border: 1.5px solid #f0d78c;
+    background: linear-gradient(135deg, #ff7043, #c62828 45%, #8e0000);
+    border: 2px dashed #ffe082;
 }
-
 .btn-line {
-    background: linear-gradient(135deg, #1db954 0%, #06C755 50%, #046b32 100%);
-    border: 1.5px solid #a8f5c0;
+    background: linear-gradient(135deg, #26a69a, #00897b 50%, #004d40);
+    border: 2px solid #b2dfdb;
 }
-
 .site-footer {
-    padding: 18px;
-    text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    color: #94a3b8;
-    font-size: 0.9rem;
+    padding: 16px; text-align: center; border-top: 2px dashed rgba(198,40,40,.3);
+    color: #607d8b; font-size: 0.9rem; background: #fff;
 }
+.site-footer a { color: #c62828; }
+.breadcrumb { font-size: 0.85rem; color: #90a4ae; margin-bottom: 10px; }
+.breadcrumb a { color: #ffe082; text-decoration: none; }
 
-.site-footer a { color: #f0d78c; }
-
-.breadcrumb {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    margin-bottom: 10px;
+@media (max-width: 380px) {
+    .page-header { padding-left: 12px; padding-right: 12px; }
+    .section { padding: 14px 12px; }
 }
-
-.breadcrumb a {
-    color: #f0d78c;
-    text-decoration: none;
+@media (prefers-reduced-motion: reduce) {
+    .btn:active { transform: none; }
 }
