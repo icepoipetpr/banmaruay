@@ -202,7 +202,7 @@
                 <h2>สมัครบ้านมารวยและดูแลบัญชี</h2>
                 <p>กดสมัครจากปุ่มในเว็บ ตั้งรหัสผ่านเฉพาะ และไม่ส่งรหัสผ่านให้ผู้อื่น หากมีปัญหาให้ใช้ปุ่มไลน์จากหน้าเว็บนี้เท่านั้น</p>
 
-                <h2>คำถามที่พบบ่อย</h2>
+                <h2 id="faq">คำถามที่พบบ่อย</h2>
                 <h3>ทางเข้าบ้านมารวยล่าสุดอยู่ที่ไหน?</h3>
                 <p>ใช้ <a href="/">banmaruay.com</a> เป็นทางเข้าหลัก แล้วกดปุ่มจากในเว็บ</p>
                 <h3>ควรค้นหาคำว่าอะไร?</h3>
@@ -222,14 +222,15 @@
         <footer class="site-footer">
             <nav class="site-footer-nav" aria-label="เมนูท้ายหน้า">
                 <a href="/">หน้าแรก</a>
-                <a href="tang-khao-banmaruay.html">ทางเข้าบ้านมารวย</a>
+                <span aria-hidden="true">|</span>
                 <a href="khu-mue-banmaruay.html">คู่มือบ้านมารวย</a>
-                <a href="samak-banmaruay.html">สมัครบ้านมารวย</a>
+                <span aria-hidden="true">|</span>
+                <a href="#faq">คำถามที่พบบ่อย</a>
+                <span aria-hidden="true">|</span>
                 <a href="https://maruay.co/register?af=user-11327&ag=mabaa" target="_blank" rel="noopener noreferrer">banmaruay.com</a>
             </nav>
-            <p class="site-footer-copy">© 2026 บ้านมารวย | ทางเข้าบ้านมารวยล่าสุด เว็บบ้านมารวย อัปเดตข้อมูลและช่องทางติดต่อ</p>
+            <p class="site-footer-copy">© 2026 <a href="/">บ้านมารวย</a> | ทางเข้าบ้านมารวย เว็บบ้านมารวยออนไลน์ อัปเดตข้อมูล ผลรางวัล และ คู่มือใช้งาน</p>
             <p class="site-footer-note">เนื้อหาเพื่อให้ข้อมูลประกอบการตัดสินใจ ไม่รับประกันผลการออกรางวัล</p>
-            <p class="site-footer-online">ขณะนี้มีผู้ออนไลน์มารวยอยู่ <span id="footer-online-counter" class="online-counter-num">10,248</span> คน</p>
         </footer>
 
     </div>
@@ -244,18 +245,13 @@
 
         function updateCounter() {
             const el = document.getElementById('online-counter');
-            const footerEl = document.getElementById('footer-online-counter');
-            if (!el && !footerEl) return;
-            let n = parseInt((el || footerEl).innerText.replace(/,/g, ''), 10) || 10248;
+            if (!el) return;
+            let n = parseInt(el.innerText.replace(/,/g, ''), 10) || 10248;
             n += Math.floor(Math.random() * 18) + 3;
-            const text = n.toLocaleString();
-            [el, footerEl].forEach((node) => {
-                if (!node) return;
-                node.innerText = text;
-                node.classList.remove('tick');
-                void node.offsetWidth;
-                node.classList.add('tick');
-            });
+            el.innerText = n.toLocaleString();
+            el.classList.remove('tick');
+            void el.offsetWidth;
+            el.classList.add('tick');
         }
         safeInterval(updateCounter, 1800);
 
