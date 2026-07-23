@@ -292,6 +292,40 @@ body {
     min-height: 44px;
 }
 
+.site-footer {
+    margin: 0 var(--side-gap) 18px;
+    padding: 16px 14px 14px;
+    border-radius: 14px;
+    background: linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 55%, #12324f 100%);
+    border: 2px solid rgba(224,168,0,.45);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), 0 8px 18px rgba(15,42,68,.2);
+    text-align: center;
+}
+.site-footer-nav {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 14px;
+    margin-bottom: 12px; padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(255,255,255,.22);
+}
+.site-footer-nav a {
+    color: #ffe082; font-weight: 800; font-size: 13px; text-decoration: none;
+    min-height: 36px; display: inline-flex; align-items: center;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+.site-footer-nav a:active { opacity: .85; }
+.site-footer-copy {
+    color: #e8dcc8; font-size: 12px; line-height: 1.55; margin-bottom: 6px;
+}
+.site-footer-note {
+    color: #b0bec5; font-size: 11px; line-height: 1.5; margin-bottom: 10px;
+}
+.site-footer-online {
+    color: #fff; font-size: 12.5px; font-weight: 700;
+    padding: 8px 10px; border-radius: 999px;
+    background: rgba(255,255,255,.08);
+    border: 1.5px dashed rgba(198,40,40,.45);
+}
+.site-footer-online .online-counter-num { color: #ff8a80; font-weight: 800; }
+
 @media (max-width: 380px) {
     :root { --side-gap: 12px; }
     .main-container::before, .main-container::after { width: 8px; opacity: .65; }
@@ -299,4 +333,6 @@ body {
     .btn-login-red::before { display: none; }
     .btn-emoji { width: 32px; height: 32px; }
     .lottery-balls .ball { --ball-size: 30px; font-size: 12px; }
+    .site-footer-nav { gap: 6px 10px; }
+    .site-footer-nav a { font-size: 12px; }
 }

@@ -219,6 +219,19 @@
             </ul>
         </nav>
 
+        <footer class="site-footer">
+            <nav class="site-footer-nav" aria-label="เมนูท้ายหน้า">
+                <a href="/">หน้าแรก</a>
+                <a href="tang-khao-banmaruay.html">ทางเข้าบ้านมารวย</a>
+                <a href="khu-mue-banmaruay.html">คู่มือบ้านมารวย</a>
+                <a href="samak-banmaruay.html">สมัครบ้านมารวย</a>
+                <a href="https://maruay.co/register?af=user-11327&ag=mabaa" target="_blank" rel="noopener noreferrer">banmaruay.com</a>
+            </nav>
+            <p class="site-footer-copy">© 2026 บ้านมารวย | ทางเข้าบ้านมารวยล่าสุด เว็บบ้านมารวย อัปเดตข้อมูลและช่องทางติดต่อ</p>
+            <p class="site-footer-note">เนื้อหาเพื่อให้ข้อมูลประกอบการตัดสินใจ ไม่รับประกันผลการออกรางวัล</p>
+            <p class="site-footer-online">ขณะนี้มีผู้ออนไลน์มารวยอยู่ <span id="footer-online-counter" class="online-counter-num">10,248</span> คน</p>
+        </footer>
+
     </div>
 
     <script>
@@ -231,13 +244,18 @@
 
         function updateCounter() {
             const el = document.getElementById('online-counter');
-            if (!el) return;
-            let n = parseInt(el.innerText.replace(/,/g, ''), 10) || 10248;
+            const footerEl = document.getElementById('footer-online-counter');
+            if (!el && !footerEl) return;
+            let n = parseInt((el || footerEl).innerText.replace(/,/g, ''), 10) || 10248;
             n += Math.floor(Math.random() * 18) + 3;
-            el.innerText = n.toLocaleString();
-            el.classList.remove('tick');
-            void el.offsetWidth;
-            el.classList.add('tick');
+            const text = n.toLocaleString();
+            [el, footerEl].forEach((node) => {
+                if (!node) return;
+                node.innerText = text;
+                node.classList.remove('tick');
+                void node.offsetWidth;
+                node.classList.add('tick');
+            });
         }
         safeInterval(updateCounter, 1800);
 
