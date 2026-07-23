@@ -85,9 +85,12 @@ body {
 
 .lottery-balls { display: flex; justify-content: center; gap: 6px; padding: 12px var(--side-gap) 0; flex-wrap: wrap; }
 .lottery-balls .ball {
-    width: 34px; height: 34px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    --ball-size: 34px;
+    width: var(--ball-size); height: var(--ball-size); border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
     font-weight: 800; font-size: 13px; color: #fff;
     box-shadow: inset 0 -3px 0 rgba(0,0,0,.18), 0 3px 6px rgba(0,0,0,.16);
+    overflow: hidden; position: relative; flex: 0 0 auto;
 }
 .lottery-balls .ball:nth-child(1){background:#e53935}
 .lottery-balls .ball:nth-child(2){background:#fb8c00}
@@ -95,6 +98,32 @@ body {
 .lottery-balls .ball:nth-child(4){background:#43a047}
 .lottery-balls .ball:nth-child(5){background:#1e88e5}
 .lottery-balls .ball:nth-child(6){background:#00acc1}
+
+.lottery-balls .ball-reel {
+    display: flex; flex-direction: column; align-items: center;
+    will-change: transform;
+}
+.lottery-balls .ball-reel span {
+    display: flex; align-items: center; justify-content: center;
+    width: var(--ball-size); height: var(--ball-size);
+    flex: 0 0 var(--ball-size); line-height: 1;
+}
+
+.ball-reel-down { animation: reel-down 1.1s linear infinite; }
+.ball-reel-up { animation: reel-up 1.35s linear infinite; }
+.ball-reel-down-fast { animation: reel-down .85s linear infinite; }
+.ball-reel-up-slow { animation: reel-up 1.7s linear infinite; }
+.ball-reel-up-fast { animation: reel-up .95s linear infinite; }
+.lottery-balls .ball:nth-child(5) .ball-reel { animation-delay: -.35s; }
+
+@keyframes reel-down {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(var(--ball-size) * -10)); }
+}
+@keyframes reel-up {
+    from { transform: translateY(calc(var(--ball-size) * -10)); }
+    to { transform: translateY(0); }
+}
 
 .button-group-container { padding: 14px var(--side-gap); display: flex; flex-direction: column; gap: 12px; }
 .btn-action-style {
@@ -168,7 +197,9 @@ body {
     50% { box-shadow: 0 0 0 3px rgba(178,223,219,.45), 0 12px 26px rgba(0,137,123,.42), inset 0 1px 0 rgba(255,255,255,.45); }
 }
 @media (prefers-reduced-motion: reduce) {
-    .btn-login-red, .btn-line-green, .status-dot { animation: none !important; }
+    .btn-login-red, .btn-line-green, .status-dot,
+    .ball-reel-down, .ball-reel-up, .ball-reel-down-fast, .ball-reel-up-slow,
+    .ball-reel-up-fast { animation: none !important; }
     .btn-action-style:active { transform: none; }
 }
 
@@ -245,5 +276,5 @@ body {
     .brand-ticket { flex-wrap: wrap; }
     .btn-login-red::before { display: none; }
     .btn-emoji { width: 32px; height: 32px; }
-    .lottery-balls .ball { width: 30px; height: 30px; font-size: 12px; }
+    .lottery-balls .ball { --ball-size: 30px; font-size: 12px; }
 }
