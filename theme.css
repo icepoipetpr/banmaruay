@@ -82,6 +82,20 @@ body {
     width: 8px; height: 8px; border-radius: 50%; background: #00c853; flex: 0 0 auto;
     box-shadow: 0 0 0 4px rgba(0,200,83,.18);
 }
+.online-counter-num {
+    display: inline-block;
+    min-width: 4.5em;
+    text-align: center;
+    transition: transform .2s ease;
+}
+.online-counter-num.tick {
+    animation: counter-tick .35s ease;
+}
+@keyframes counter-tick {
+    0% { transform: translateY(4px); opacity: .55; }
+    60% { transform: translateY(-2px); opacity: 1; }
+    100% { transform: translateY(0); }
+}
 
 .lottery-balls { display: flex; justify-content: center; gap: 6px; padding: 12px var(--side-gap) 0; flex-wrap: wrap; }
 .lottery-balls .ball {
@@ -199,7 +213,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .btn-login-red, .btn-line-green, .status-dot,
     .ball-reel-down, .ball-reel-up, .ball-reel-down-fast, .ball-reel-up-slow,
-    .ball-reel-up-fast { animation: none !important; }
+    .ball-reel-up-fast, .gold-feed-item, .online-counter-num.tick { animation: none !important; }
     .btn-action-style:active { transform: none; }
 }
 
@@ -215,18 +229,24 @@ body {
 }
 .gold-feed-header h3 { color: #ffe082; font-size: 14px; font-weight: 700; }
 .gold-live-tag { background: var(--stamp); color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 999px; flex: 0 0 auto; }
-.gold-feed-list { display: flex; flex-direction: column; gap: 8px; max-height: 220px; overflow: hidden; }
+.gold-feed-list { display: flex; flex-direction: column; gap: 8px; max-height: 320px; overflow: hidden; }
 .gold-feed-item {
     display: flex; justify-content: space-between; align-items: center; gap: 8px;
     background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1);
     border-radius: 10px; padding: 10px 12px;
+    animation: goldSlideIn .45s ease-out;
 }
-.gold-username { color: #fff; font-size: 13px; font-weight: 700; }
+.gold-username { color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .02em; }
 .gold-time { color: #b0bec5; font-size: 11px; margin-top: 2px; word-break: break-word; }
-.gold-amount { font-size: 13.5px; font-weight: 800; flex: 0 0 auto; }
+.gold-amount { font-size: 12px; font-weight: 800; flex: 0 0 auto; text-align: right; white-space: nowrap; }
 .gold-amount.text-withdraw { color: #ff8a80; }
 .gold-amount.text-deposit { color: #69f0ae; }
 .gold-item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+
+@keyframes goldSlideIn {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
 
 .review-section-container { padding: 4px var(--side-gap); display: flex; flex-direction: column; gap: 10px; }
 .review-card {

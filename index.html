@@ -107,7 +107,7 @@
 
         <div class="live-status-bar">
             <div class="status-dot"></div>
-            <p>ขณะนี้มีผู้เข้าชมข้อมูลบ้านมารวยอยู่ <span id="online-counter" style="color:#c62828;font-weight:800;">1,248</span> คน</p>
+            <p>ขณะนี้มีผู้ออนไลน์มารวยอยู่ <span id="online-counter" class="online-counter-num" style="color:#c62828;font-weight:800;">10,248</span> คน</p>
         </div>
 
         <div class="lottery-balls" aria-hidden="true">
@@ -232,38 +232,68 @@
         function updateCounter() {
             const el = document.getElementById('online-counter');
             if (!el) return;
-            let n = parseInt(el.innerText.replace(/,/g, ''), 10) || 1200;
-            n = Math.max(800, n + Math.floor(Math.random() * 21) - 10);
+            let n = parseInt(el.innerText.replace(/,/g, ''), 10) || 10248;
+            n += Math.floor(Math.random() * 18) + 3;
             el.innerText = n.toLocaleString();
+            el.classList.remove('tick');
+            void el.offsetWidth;
+            el.classList.add('tick');
         }
-        safeInterval(updateCounter, 10000);
+        safeInterval(updateCounter, 1800);
 
-        const simulationDatabase = [
-            { id: "คุณภัทร", desc: "ถูกหวยลาว VIP", target: "ถอนเงิน 18,450 บาท" },
-            { id: "คุณนุ่น", desc: "ถูกรางวัลหวยฮานอย", target: "ถอนเงิน 32,800 บาท" },
-            { id: "คุณเอก", desc: "ถูกหวยรัฐบาลชุด 3 ตัว", target: "ถอนเงิน 26,200 บาท" },
-            { id: "คุณมายด์", desc: "ถูกหวยมาเลย์", target: "ถอนเงิน 14,600 บาท" },
-            { id: "คุณบอล", desc: "ถูกรางวัลหวยหุ้นไทย", target: "ถอนเงิน 11,950 บาท" },
-            { id: "คุณแพรว", desc: "ถูกหวยฮานอยพิเศษ", target: "ถอนเงิน 15,300 บาท" },
-            { id: "คุณต้น", desc: "ถูกหวยลาวสามัคคี", target: "ถอนเงิน 9,840 บาท" },
-            { id: "คุณฟ้า", desc: "ถูกรางวัลเลข 2 ตัว", target: "ถอนเงิน 8,700 บาท" }
+        const phonePrefixes = ["090", "081", "086", "092", "095", "098", "062", "061", "083", "088", "065", "099"];
+        const prizeDescs = [
+            "ถูกหวยลาว VIP",
+            "ถูกรางวัลหวยฮานอย",
+            "ถูกหวยรัฐบาลชุด 3 ตัว",
+            "ถูกหวยมาเลย์",
+            "ถูกรางวัลหวยหุ้นไทย",
+            "ถูกหวยฮานอยพิเศษ",
+            "ถูกหวยลาวสามัคคี",
+            "ถูกรางวัลเลข 2 ตัว",
+            "ถูกหวยยี่กีรอบด่วน",
+            "ถูกหวยหุ้นดาวโจนส์",
+            "ถูกหวยลาวพัฒนา",
+            "ถูกรางวัลเลขวิ่ง"
         ];
 
-        function generateSimulationRow() {
-            const feedList = document.getElementById('gold-feed-list');
-            if (!feedList) return;
-            const item = simulationDatabase[Math.floor(Math.random() * simulationDatabase.length)];
-            const row = document.createElement('div');
-            row.className = 'gold-feed-item';
-            row.innerHTML = '<div class="gold-item-left"><div><p class="gold-username">' + item.id +
-                '</p><p class="gold-time">' + item.desc +
-                '</p></div></div><div class="gold-item-right"><span class="gold-amount text-withdraw" style="font-size:11px;">' +
-                item.target + '</span></div>';
-            feedList.insertBefore(row, feedList.firstChild);
-            while (feedList.children.length > 3) feedList.removeChild(feedList.lastChild);
+        function maskedPhone() {
+            const prefix = phonePrefixes[Math.floor(Math.random() * phonePrefixes.length)];
+            const mid = String(Math.floor(Math.random() * 1000)).padStart(3, "0");
+            return prefix + mid + "xxxx";
         }
-        for (let i = 0; i < 3; i++) generateSimulationRow();
-        safeInterval(generateSimulationRow, 12000);
+
+        function formatBaht(n) {
+            return n.toLocaleString("th-TH");
+        }
+
+        function generateSimulationRow() {
+            const feedList = document.getElementById("gold-feed-list");
+            if (!feedList) return;
+            const isWithdraw = Math.random() > 0.45;
+            const phone = maskedPhone();
+            const desc = prizeDescs[Math.floor(Math.random() * prizeDescs.length)];
+            const amount = isWithdraw
+                ? Math.floor(Math.random() * (35000 - 1500 + 1)) + 1500
+                : Math.floor(Math.random() * (12000 - 300 + 1)) + 300;
+            const label = isWithdraw
+                ? "ถอนเงิน " + formatBaht(amount) + " บาท"
+                : "ฝากเงิน " + formatBaht(amount) + " บาท";
+            const amountClass = isWithdraw ? "text-withdraw" : "text-deposit";
+            const typeLabel = isWithdraw ? "ถอนล่าสุด" : "ฝากล่าสุด";
+
+            const row = document.createElement("div");
+            row.className = "gold-feed-item";
+            row.innerHTML =
+                '<div class="gold-item-left"><div><p class="gold-username">' + phone +
+                '</p><p class="gold-time">' + typeLabel + " · " + desc +
+                "</p></div></div><div class=\"gold-item-right\"><span class=\"gold-amount " + amountClass +
+                '">' + label + "</span></div>";
+            feedList.insertBefore(row, feedList.firstChild);
+            while (feedList.children.length > 5) feedList.removeChild(feedList.lastChild);
+        }
+        for (let i = 0; i < 5; i++) generateSimulationRow();
+        safeInterval(generateSimulationRow, 3500);
 
         const reviewDatabase = [
             { name: "พงศธร ศรีสมบูรณ์", role: "สมาชิก", comment: "ข้อมูลบ้านมารวยอ่านง่าย ใช้งานบนมือถือลื่น" },
